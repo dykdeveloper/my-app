@@ -7,6 +7,9 @@ import FunctionProp from "./function_props/FunctionProp";
 import FunctionValidate from "./function_validation/FunctionValidate";
 import FunctionEvent from "./function_event/FunctionEvent";
 import UseState1 from "./hook/UseState1";
+import UseEffect1 from "./hook/UseEffect1"
+import List1 from "./lists/List1"
+
 
 function App() {
   return (
@@ -15,9 +18,11 @@ function App() {
       {/* <First /> */}
       {/* <Component1 /> */}
       {/* <FunctionProp /> */}
-      <FunctionValidate />
+      {/* <FunctionValidate /> */}
       {/* <FunctionEvent /> */}
       {/* <UseState1 /> */}
+      {/* <UseEffect1 /> */}
+      <List1 />
     </>
   );
 }
