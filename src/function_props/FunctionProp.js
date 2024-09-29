@@ -4,8 +4,7 @@ import FunctionProp1 from './FunctionProp1'
 
 function FunctionProp() { 
     const data ={
-        p1: "example",
-        p2: "no. 3"
+        p1: "example no. 2",
     }
 
     return(

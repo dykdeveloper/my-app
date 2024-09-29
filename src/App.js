@@ -12,8 +12,10 @@ import List1 from "./lists/List1"
 import TodoApp from "./lists/TodoApp";
 import Form1 from "./form/Form1";
 import Form2 from "./form/Form2";
-import UseRef1 from "./hook/UseRef1";
+import UseRef1 from "./hook/UseRef_UseState";
 import UseRefhook from "./hook/UseRef1";
+import Styling1 from "./styling_css/Styling1";
+import LiftState from "./Lifting_Stateup/LifState";
 
 
 function App() {
@@ -31,7 +33,10 @@ function App() {
       {/* <TodoApp /> */}
       {/* <Form1 /> */}
       {/* <Form2 /> */}
-      <UseRefhook />
+      {/* <UseRefhook /> */}
+      {/* <Styling1 /> */}
+      {/* <UseRef1 /> */}
+      <LiftState />
     </>
   );
 }
