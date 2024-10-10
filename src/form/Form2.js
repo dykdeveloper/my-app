@@ -1,54 +1,58 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
 
-function Form2(){
+function Form2() {
+  const [formdata, setformdata] = useState({ email: "", password: "" });
 
-    const [formdata, setformdata] = useState({email: "", password: ""});
+  const changename = (e) => {
+    const { name, value } = e.target;
 
-    const changename = (e) =>{
-        const {name , value} = e.target;
+    setformdata({ ...formdata, [name]: value });
+  };
 
-        setformdata({...formdata, [name]: value});
+  const submitname = (e) => {
+    e.preventDefault();
+    const { email, password } = formdata;
+
+    if ((!email || !password) && !email && !password) {
+      alert("email and password are required");
+    } else if (!email) {
+      alert("email is required");
+    } else if (!password) {
+      alert("password is required");
+    } else {
+      console.log("email", formdata.email);
+      console.log("password", formdata.password);
     }
+  };
 
-    const submitname = (e) =>{
-        e.preventDefault();
-        const {email, password} = formdata;
+  return (
+    <>
+      <form onSubmit={submitname}>
+        <label>
+          Email:
+          <input
+            type="email"
+            name="email"
+            autoComplete="on"
+            value={formdata.email}
+            onChange={changename}
+          />
+        </label>
 
-        if (!email || !password) {
-            if (!email && !password) {
-                alert('email and password are required')
-            }else{
-                if (!email) {
-                    alert('email is required')
-                }
-                if (!password) {
-                    alert('password is required')
-                }
-            }
-        }else{
-            console.log("email", formdata.email);
-            console.log("password", formdata.password);
-        }
-    }
-
-   
-
-    return(
-        <>
-        <form onSubmit={submitname}>
-            <label>
-            Email:
-            <input type='email' name='email' autoComplete='on' value={formdata.email} onChange={changename}/>
-            </label>
-
-            <label>
-            Password:
-            <input type='password' name='password' autoComplete='on' value={formdata.password} onChange={changename}/>
-            </label>
-            <input type="submit"/>
-        </form>
-        </>
-    )
+        <label>
+          Password:
+          <input
+            type="password"
+            name="password"
+            autoComplete="on"
+            value={formdata.password}
+            onChange={changename}
+          />
+        </label>
+        <input type="submit" />
+      </form>
+    </>
+  );
 }
 
 export default Form2;
